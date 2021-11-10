@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+button {
+	margin-top: 20px;
+	padding: 15px;
+	border-style: none;
+	border-radius: 5px;
+	background-color: #dcd5d5;
+}
+
+button:hover {
+	background-color: #606266;
+}
+
+.sensors {
+	color: #dcd5d5;
+}
