@@ -50,10 +50,11 @@ app.get('/latestEntry', async (req, res) => {
 		const midScan = [];
 		const rightScan = [];
 		let time = 0
-		triplets.forEach(triplet => {
-			leftScan.push([time, (triplet[0] != 380 ? triplet[0] : 3)]);
-			midScan.push([time, (triplet[1] != 380 ? triplet[1] : 3)]);
-			rightScan.push([time, (triplet[2] != 380 ? triplet[2] : 3)]);
+		triplets.forEach((triplet, i) => {
+			leftScan.push([time, (triplet[0] == 380 ? (i > 0 ? leftScan[i - 1][1] : 3) : triplet[0])]);
+			midScan.push([time, (triplet[1] == 380 ? (i > 0 ? midScan[i - 1][1] : 3) : triplet[1])]);
+			rightScan.push([time, (triplet[2] == 380 ? (i > 0 ? rightScan[i - 1][1] : 3) : triplet[2])]);
+
 			time += 0.1;
 		});
 

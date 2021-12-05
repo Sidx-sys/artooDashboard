@@ -13,16 +13,16 @@ const LineChart = ({leftScan, middleScan, rightScan}) => {
       )
 
     return (
-        <div
-          style={{
-            width: '1200px',
-            height: '600px',
-            marginLeft: '170px',
-            marginTop: '10px',
-          }}
-        >
-          <Chart data={lineData} axes={axes} tooltip/>
-        </div>
+          <div
+            style={{
+              width: '1200px',
+              height: '600px',
+              marginTop: '10px',
+              marginLeft: '50px'
+            }}
+          >
+            <Chart data={lineData} axes={axes} tooltip/>
+          </div>
       )
 }
 
